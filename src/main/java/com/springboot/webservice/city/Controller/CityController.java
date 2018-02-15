@@ -16,12 +16,12 @@ public class CityController {
     @Autowired
     private CityRepository cityRepo;
 
-    @PostConstruct
-    public void initData(){
-        cityRepo.save(new City(1,"Cincinnati", "OH", 100000));
-        cityRepo.save(new City(2, "Denver", "CO", 1000));
-        cityRepo.save(new City(3,"Homer", "AK", 500));
-    }
+//    @PostConstruct
+//    public void initData(){
+//        cityRepo.save(new City(4,"Dallas", "TX", 100000));
+//        cityRepo.save(new City(5, "Jacksonville", "FL", 1000));
+//        cityRepo.save(new City(6,"Chicago", "IL", 500));
+//    }
 
     @RequestMapping(value = "/city")
     public @ResponseBody
@@ -46,6 +46,11 @@ public class CityController {
     public City getCity(@PathVariable("name") String name) {
         return cityRepo.findByName(name);
     }
+
+//    @RequestMapping(value = "/city/add/{id}/{name}/{state_located}/{population}")
+////    public void addCity(@PathVariable("id") int id,@PathVariable("name") String name,@PathVariable("state_located") String state_located,@PathVariable("population") int population) {
+////        cityRepo.addCity(id,name,state_located,population);
+////    }
 
     public CityRepository getCityRepo() {
         return cityRepo;
