@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>temp/home</title>
+    <link rel="stylesheet" href="/main.css" />
+
+</head>
+<body>
+<a href="cities_home.html">View Cities</a>
+
+<div id="react"></div>
+
+    <h1>Add a city</h1>
+    <form action="/cityadd" method="POST">
+        City Name: <input type="text" id="name" name="name" /><br />
+        State Located: <input type="text" id="state_Located" name="state_Located" /><br />
+        Population: <input rows="5" cols="70" id="population" name="population"/>
+
+        <br/>
+        <input type="submit" />
+    </form>
+
+</body>
+</html>

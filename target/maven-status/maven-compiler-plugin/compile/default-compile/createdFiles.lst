@@ -1,6 +1,10 @@
+com\springboot\webservice\city\Model\Car.class
+com\springboot\webservice\city\Model\CarMongoRepository.class
 com\springboot\webservice\city\Model\City.class
-com\springboot\webservice\city\Model\CityRepository.class
 com\springboot\webservice\city\CityApplication.class
-com\springboot\webservice\city\config\Config.class
 com\springboot\webservice\city\Controller\CityController.class
 com\springboot\webservice\city\config\MongoConfig.class
+com\springboot\webservice\city\Model\CityRepository.class
+com\springboot\webservice\city\config\Config.class
+com\springboot\webservice\city\Controller\CarController.class
+com\springboot\webservice\city\Controller\AddCityController.class
