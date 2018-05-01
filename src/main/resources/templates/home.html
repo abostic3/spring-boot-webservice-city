@@ -8,7 +8,24 @@
 </head>
 <body>
 <a href="cities_home.html">View Cities</a>
-
+<h1>list of cities:</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>State</th>
+        <th>Population</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="city : ${cityList}">
+        <td th:text="${city.name}"></td>
+        <td th:text="${city.state_Located}"></td>
+        <td th:text="${city.population}"></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
 <div id="react"></div>
 
     <h1>Add a city</h1>
