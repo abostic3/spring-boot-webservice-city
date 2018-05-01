@@ -11,21 +11,21 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
-public class CityController {
+public class CityApiController {
 
     @Autowired
     private CityRepository cityRepo;
 
-    @PostConstruct
-    public void initData(){
-        cityRepo.save(new City("Cincinnati", "OH", 10000));
-        cityRepo.save(new City("Ney York City", "NY", 100000000));
-        cityRepo.save(new City("Los Santos", "CA", 1000000));
-        cityRepo.save(new City("Ann Harbor", "MI", 1000000));
-        cityRepo.save(new City("Homer", "AK", 1000));
-    }
+//    @PostConstruct
+//    public void initData(){
+//        cityRepo.save(new City("Cincinnati", "OH", 10000));
+//        cityRepo.save(new City("Ney York City", "NY", 100000000));
+//        cityRepo.save(new City("Los Santos", "CA", 1000000));
+//        cityRepo.save(new City("Ann Harbor", "MI", 1000000));
+//        cityRepo.save(new City("Homer", "AK", 1000));
+//    }
 
-    @RequestMapping(value = "/city")
+    @RequestMapping(value = "/api/city")
     public @ResponseBody
     City returnData(@RequestParam(value="name", required=false, defaultValue="Choose a city") String name){
         City newCity = new City();
@@ -37,12 +37,12 @@ public class CityController {
 
     }
 
-    @RequestMapping("/cities")
+    @RequestMapping("/api/cities")
     public List<City> getAllCities(){
         return cityRepo.findAll();
     }
 
-    @RequestMapping(value = "/city/{name}")
+    @RequestMapping(value = "/api/city/{name}")
     public City getCity(@PathVariable("name") String name) {
         return cityRepo.findByName(name);
     }

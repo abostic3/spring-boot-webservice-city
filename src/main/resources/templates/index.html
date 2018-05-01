@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Cities</title>
+</head>
+<body>
+<a href="home.html">Home</a>
+<h1>list of cities:</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>State</th>
+        <th>Population</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="city : ${cityList}">
+        <td th:text="${city.name}"></td>
+        <td th:text="${city.state_Located}"></td>
+        <td th:text="${city.population}"></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

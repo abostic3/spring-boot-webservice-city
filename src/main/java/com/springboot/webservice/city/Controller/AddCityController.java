@@ -27,11 +27,11 @@ public class AddCityController {
         AddCityController.cityRepository = cityRepository;
     }
 
-    private static final AtomicInteger count = new AtomicInteger(11);
+    //private static final AtomicInteger count = new AtomicInteger(11);
 
     @RequestMapping(value = "/")
     public String index(Model model) {
-
+        model.addAttribute("cityList", cityRepository.findAll());
         return "index";
     }
 
