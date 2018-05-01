@@ -36,7 +36,8 @@ public class AddCityController {
     }
 
     @RequestMapping(value = "/home")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("cityList", cityRepository.findAll());
         return "home";
     }
 
